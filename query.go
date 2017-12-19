@@ -14,6 +14,7 @@ import (
 	"github.com/briandowns/spinner"
 	"github.com/PuerkitoBio/goquery"
     "github.com/fatih/color"
+    "github.com/skratchdot/open-golang/open"
 )
 
 const (
@@ -23,7 +24,7 @@ const (
     multiURL = "http://dict.youdao.com/example/blng/eng/%s"
 )
 
-func query(words []string, withVoice, withMore, isMulti bool) {
+func query(words []string, withVoice, withMore, openBrowser, isMulti bool) {
     var url string
     var doc *goquery.Document
     var voiceBody io.ReadCloser
@@ -112,6 +113,10 @@ func query(words []string, withVoice, withMore, isMulti bool) {
     // Play voice
     if withVoice && isAvailablesOS() {
         playVoice(voiceBody)
+    }
+
+    if openBrowser {
+        open.Run(fmt.Sprintf(url, queryString))
     }
 }
 

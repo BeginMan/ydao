@@ -9,33 +9,25 @@ import (
 )
 
 var (
-	Version = "0.1"
-	logo    = `
-██╗   ██╗██████╗ ██╗ ██████╗████████╗
-╚██╗ ██╔╝██╔══██╗██║██╔════╝╚══██╔══╝
- ╚████╔╝ ██║  ██║██║██║        ██║
-  ╚██╔╝  ██║  ██║██║██║        ██║
-   ██║   ██████╔╝██║╚██████╗   ██║
-   ╚═╝   ╚═════╝ ╚═╝ ╚═════╝   ╚═╝
-
-
-  ydict v%s
+	logo = `
+  ydao v1.1
   好好学学英语吧...
     `
 )
 
 func displayUsage() {
-	color.Cyan(logo, Version)
+	color.Cyan(logo)
     color.Cyan("Usage:")
     color.Cyan("ydict <word(s) to query>        Query the word(s)")
     color.Cyan("ydict <word(s) to query> -v     Query with speech")
     color.Cyan("ydict <word(s) to query> -m     Query with more example phrases and sentences")
+    color.Cyan("ydict <word(s) to query> -w     Query and open browser to get detail")
 }
 
 
-func parseArgs(args []string) ([]string, bool, bool) {
-    // match argument: -v or -m
-    var withVoice, withMore bool
+func parseArgs(args []string) ([]string, bool, bool, bool) {
+    // match argument: -v,-m, -w
+    var withVoice, withMore, openBrowser bool
     parameterStartIndex := findParaStartIndex(args)
 	paramArray := args[parameterStartIndex:]
 
@@ -46,7 +38,11 @@ func parseArgs(args []string) ([]string, bool, bool) {
 	if elementInStringArray(paramArray, "-v") {
 		withVoice = true
 	}
-    return args[1:parameterStartIndex], withVoice, withMore
+
+    if elementInStringArray(paramArray, "-w") {
+        openBrowser = true
+    }
+    return args[1:parameterStartIndex], withVoice, withMore, openBrowser
 }
 
 func findParaStartIndex(args []string) int {

@@ -14,6 +14,6 @@ func main(){
         os.Exit(0)
     }
 
-    words, withVoice, withMore := parseArgs(os.Args)
-    query(words, withVoice, withMore, len(words) > 1)
+    words, withVoice, withMore, openBrowser := parseArgs(os.Args)
+    query(words, withVoice, withMore, openBrowser, len(words) > 1)
 }
