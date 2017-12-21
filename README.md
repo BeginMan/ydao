@@ -9,9 +9,10 @@
 # Usage
 
 ```bash
-$ make build
-$ ./ydao
-# -v 发音, -m 详细
+$ brew tap beginman/tap && brew install beginman/tap/ydao
+
+$ ydao
+# -v 发音, -m 详细, -w 打开网页查看明细
 ```
 
 # TODO
