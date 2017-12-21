@@ -19,7 +19,7 @@ deploy:
   api_key:
     secure: VC/5ynWUfs1CRWLnqZ0vgT6jNxP/uavpn76NSQBACKpk1PlzceZAHSv5UP8uiUfaE4afuA3vInWxW8QMp9NDLFC1Q/V1MqpTR4QliLx554aBikNoc6fnP/lf3u7bLSWJcc8ATctPlbugm/N6zPmCuz6SCLmUo5QraIjhtPD66DbzHUIxZ94fq3jSCrPeoxI/dOdIvRCgpBYp/OjlyVW6qx9k8Z/hAbyn2YSfs65vIUNX4WrdDYHkYLE6wE/lYuDOd3PnNrjGxHBS8bBulIf3C+KsV44Xck4sPtjniEzclgsAes57ISm+0YGVw+ql8ESSbmq5O10en0f+gGO5P7Z5/Z/oGn/QrS2i60+2CM2q9GFm1t+xFm4BBuDYDu9dJHRuf2Uq2QjKL8osaz0IzewIspJDgGwBQCEjFytHoqIG+BwmCJqlkpXcT6oxtx9Z1QZm0D/7e0cxXUGrbUI0d1EbhQiikw9tge4Zn7l9vs4k2eepCF/76jdMByb/kq3tmnn5C1zbWGNVbuI9M20BJmBYtYm+irC4dGLn12t6WAKDBcCw85VC14DPs+w+JE/KCrQpoysLJBrzzGGFIETKCvvvqVZJAk2/9KveJK/SZyd9wxk0JRc9BfSArDLtEe22YQX5QgQVSO1T7qT+AGA5PPZm458Bq6LHUBpRuwgsM/jyd2Q=
   file_glob: true
-  file: *.tar.gz
+  file: "*.tar.gz"
   skip_cleanup: true
   on:
     repo: BeginMan/ydao
