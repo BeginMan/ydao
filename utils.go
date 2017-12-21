@@ -1,6 +1,7 @@
 package main
 
 import (
+    "fmt"
     "strings"
     "unicode"
     "runtime"
@@ -9,14 +10,13 @@ import (
 )
 
 var (
-	logo = `
-  ydao v1.1
-  好好学学英语吧...
-    `
+    version = "1.1"
+	logo = "ydao V%s 好好学学英语吧..."
 )
 
 func displayUsage() {
-	color.Cyan(logo)
+    logo = fmt.Sprintf(logo, version)
+    color.Cyan(logo)
     color.Cyan("Usage:")
     color.Cyan("ydict <word(s) to query>        Query the word(s)")
     color.Cyan("ydict <word(s) to query> -v     Query with speech")

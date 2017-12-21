@@ -1,8 +1,9 @@
 # Binary name
 BINARY=ydao
+VERSION="1.1"
 # Builds the project
 build:
-		go build -o ${BINARY} -ldflags "-X main.Version=${VERSION}"
+		go build -o ${BINARY} -ldflags "-X main.version=${VERSION}"
 		go test -v
 # Installs our project: copies binaries
 install:
@@ -12,7 +13,7 @@ release:
 		go clean
 		rm -rf *.gz
 		# Build for mac
-		go build -ldflags "-X main.Version=${VERSION}"
+		go build -ldflags "-X main.version=${VERSION}"
 		tar czvf ${BINARY}-mac64-${VERSION}.tar.gz ./${BINARY}
 		# Build for arm
 		go clean
