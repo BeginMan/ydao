@@ -5,13 +5,22 @@ import (
     "strings"
     "unicode"
     "runtime"
-
-	"github.com/fatih/color"
+    "github.com/fatih/color"
 )
 
 var (
     version = "1.1"
-	logo = "ydao V%s 好好学学英语吧..."
+	logo = `
+██╗   ██╗██████╗  █████╗  ██████╗
+╚██╗ ██╔╝██╔══██╗██╔══██╗██╔═══██╗
+ ╚████╔╝ ██║  ██║███████║██║   ██║
+  ╚██╔╝  ██║  ██║██╔══██║██║   ██║
+   ██║   ██████╔╝██║  ██║╚██████╔╝
+   ╚═╝   ╚═════╝ ╚═╝  ╚═╝ ╚═════╝
+
+ydao V%s 好好学学英语吧...
+
+    `
 )
 
 func displayUsage() {
