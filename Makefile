@@ -1,6 +1,6 @@
 # Binary name
 BINARY=ydao
-VERSION="1.1"
+VERSION="1.2"
 # Builds the project
 build:
 		go build -o ${BINARY} -ldflags "-X main.version=${VERSION}"
